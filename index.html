@@ -677,6 +677,38 @@
       .homology-row div:nth-child(3) { display: none; }
     }
 
+    /* ── VIDEO EMBED ───────────────────────────────────────── */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #000;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .video-caption {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--text2);
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .video-caption span {
+      color: var(--accent);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .logo-wrap img { animation: none; }
     }
@@ -792,6 +824,19 @@
           <p class="eyebrow">Case study · Step 1</p>
           <h2 class="display">Localize first.<br>Then interrogate.</h2>
           <p class="lede">Robert F. Kennedy Jr. has adductor spasmodic dysphonia — a focal laryngeal dystonia. The methodology demands we commit to the compartments before invoking Ω.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The primary source</h2>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/mb3HGgsNZ1Q?start=0&rel=0"
+              title="RFK Jr. speaking — spasmodic dysphonia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="video-caption">RFK Jr. · adductor spasmodic dysphonia · <span>β₄VₐF</span> primary case · Kerry Kennedy enters at <span>10:05</span></p>
         </div>
 
         <div class="section">
@@ -1076,6 +1121,19 @@
           <p class="eyebrow">Case study · Step 4</p>
           <h2 class="display">Interrogating<br>the sister.</h2>
           <p class="lede">Kerry Kennedy — introduced briefly at 10:05 in the video — exhibits a milder but noticeably similar vocal tremor. Now that RFK Jr. is localized, we can ask a sharper question about her.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Listen — same β₀, different β₄VₐF</h2>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/mb3HGgsNZ1Q?start=605&rel=0"
+              title="Kerry Kennedy speaking at 10:05 — familial vocal tremor"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="video-caption">Kerry Kennedy · <span>10:05</span> · milder phenotype on the same familial manifold · shared <span>β₀</span>, attenuated <span>β₄VₐF</span></p>
         </div>
 
         <div class="section">
