@@ -1,1 +1,1294 @@
-.
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>β₄VₐF — Ukubona LLC</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="β₄VₐF: Dynamic Gain Failure — Ukubona LLC" />
+  <meta property="og:description" content="Spasmodic dysphonia as a case study in the Ukubona clinical axiom. RFK Jr., Kerry Kennedy, and the phenomenological boundary of VₐF." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://abikesa.github.io/logos/assets/ukubona-light.png" />
+
+  <!-- Icons -->
+  <link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-light.ico" />
+  <link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-dark.ico" media="(prefers-color-scheme: dark)" />
+
+  <!-- Logo preloads -->
+  <link rel="preload" href="https://abikesa.github.io/logos/assets/ukubona-light.png" as="image" />
+  <link rel="preload" href="https://abikesa.github.io/logos/assets/ukubona-dark.png" as="image" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ────────────────────────────────────────────── */
+    :root {
+      --bg0:        #0f0f0f;
+      --bg1:        #171717;
+      --bg2:        #1f1f1f;
+      --bg3:        #2a2a2a;
+      --border:     rgba(255,255,255,0.08);
+      --border-md:  rgba(255,255,255,0.14);
+      --text0:      #f2f0eb;
+      --text1:      #b8b4aa;
+      --text2:      #6e6a62;
+      --accent:     #7f77dd;
+      --accent-dim: rgba(127,119,221,0.18);
+      --accent-brd: rgba(127,119,221,0.4);
+      --coral:      #d85a30;
+      --coral-dim:  rgba(216,90,48,0.14);
+      --coral-brd:  rgba(216,90,48,0.35);
+      --teal:       #1d9e75;
+      --teal-dim:   rgba(29,158,117,0.14);
+      --amber:      #ba7517;
+      --amber-dim:  rgba(186,117,23,0.14);
+      --serif:      'DM Serif Display', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
+      --mono:       'DM Mono', 'Fira Mono', monospace;
+      --radius:     8px;
+      --radius-lg:  14px;
+      --max:        740px;
+    }
+
+    [data-theme="light"] {
+      --bg0:        #f5f3ee;
+      --bg1:        #ffffff;
+      --bg2:        #f0ede6;
+      --bg3:        #e8e4db;
+      --border:     rgba(0,0,0,0.07);
+      --border-md:  rgba(0,0,0,0.13);
+      --text0:      #1a1916;
+      --text1:      #4a4740;
+      --text2:      #8a8680;
+      --accent:     #534ab7;
+      --accent-dim: rgba(83,74,183,0.10);
+      --accent-brd: rgba(83,74,183,0.30);
+      --coral:      #993c1d;
+      --coral-dim:  rgba(153,60,29,0.10);
+      --coral-brd:  rgba(153,60,29,0.28);
+      --teal:       #0f6e56;
+      --teal-dim:   rgba(15,110,86,0.10);
+      --amber:      #854f0b;
+      --amber-dim:  rgba(133,79,11,0.10);
+    }
+
+    /* ── RESET & BASE ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg0);
+      color: var(--text0);
+      line-height: 1.75;
+      transition: background 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ────────────────────────────────────────────── */
+    .outer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── HEADER ────────────────────────────────────────────── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg0);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-wrap {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0; left: 0;
+      animation: spin 120s linear infinite;
+      transition: opacity 0.35s ease;
+    }
+
+    .logo-light { opacity: 0; }
+    .logo-dark  { opacity: 1; }
+
+    [data-theme="light"] .logo-light { opacity: 1; }
+    [data-theme="light"] .logo-dark  { opacity: 0; }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .header-meta { flex: 1; min-width: 0; }
+
+    .header-meta h1 {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--text0);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-meta p {
+      font-size: 0.72rem;
+      color: var(--text2);
+      margin-top: 1px;
+    }
+
+    /* ── THEME TOGGLE ──────────────────────────────────────── */
+    .theme-btn {
+      background: var(--bg2);
+      border: 1px solid var(--border-md);
+      border-radius: 20px;
+      padding: 0.3rem 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text1);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .theme-btn:hover {
+      background: var(--bg3);
+      color: var(--text0);
+      border-color: var(--border-md);
+    }
+
+    /* ── NAV TABS ──────────────────────────────────────────── */
+    .nav-strip {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg0);
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.75rem 1rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text2);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .tab-btn:hover { color: var(--text1); }
+
+    .tab-btn.active {
+      color: var(--text0);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── MAIN ──────────────────────────────────────────────── */
+    main {
+      padding: 3rem 0 6rem;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── SECTION SPACING ───────────────────────────────────── */
+    .section { margin-bottom: 2.5rem; }
+
+    /* ── TYPOGRAPHY ────────────────────────────────────────── */
+    .display {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text0);
+      margin-bottom: 0.5rem;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 0.75rem;
+    }
+
+    .lede {
+      font-size: 1.05rem;
+      color: var(--text1);
+      line-height: 1.7;
+      max-width: 58ch;
+    }
+
+    h2.section-head {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3.sub-head {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text0);
+      margin-bottom: 0.5rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text1); }
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: var(--text0); font-weight: 500; }
+
+    em { font-style: italic; color: var(--text1); }
+
+    /* ── CODE BLOCK ────────────────────────────────────────── */
+    .eq {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      background: var(--bg2);
+      border-left: 3px solid var(--accent-brd);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      color: var(--text0);
+      line-height: 1.8;
+      margin: 1.25rem 0;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .eq sub, .eq sup {
+      font-size: 0.65em;
+    }
+
+    /* ── QUOTE ─────────────────────────────────────────────── */
+    blockquote {
+      border-left: 2px solid var(--border-md);
+      padding-left: 1.1rem;
+      margin: 1.5rem 0;
+      color: var(--text2);
+      font-size: 0.9rem;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
+    /* ── COMPARTMENT MATRIX ────────────────────────────────── */
+    .matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.25rem 0;
+    }
+
+    .cell {
+      background: var(--bg1);
+      padding: 1.25rem;
+      transition: background 0.3s;
+    }
+
+    .cell:hover { background: var(--bg2); }
+
+    .cell-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 0.4rem;
+    }
+
+    .cell-beta {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--text0);
+      margin-bottom: 0.3rem;
+      line-height: 1;
+    }
+
+    .cell-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text0);
+      margin-bottom: 0.25rem;
+    }
+
+    .cell-desc {
+      font-size: 0.75rem;
+      color: var(--text2);
+      line-height: 1.55;
+    }
+
+    .cell.accent-vaf {
+      background: var(--coral-dim);
+      border: 1px solid var(--coral-brd);
+      border-radius: 0;
+    }
+
+    .cell.accent-vaf:hover { background: rgba(216,90,48,0.22); }
+
+    .cell.accent-vaf .cell-beta { color: var(--coral); }
+    .cell.accent-vaf .cell-name { color: var(--coral); }
+
+    /* ── CRITERION BOX ─────────────────────────────────────── */
+    .criterion-box {
+      background: var(--coral-dim);
+      border: 1px solid var(--coral-brd);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .criterion-box .crit-head {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.75rem;
+    }
+
+    .criterion-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .criterion-list li {
+      font-size: 0.85rem;
+      color: var(--text1);
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .criterion-list li::before {
+      content: '—';
+      color: var(--coral);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* ── CASE TABLE ────────────────────────────────────────── */
+    .case-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin: 1.25rem 0;
+    }
+
+    .case-table th {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text2);
+      border-bottom: 1px solid var(--border-md);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    .case-table td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text1);
+      vertical-align: top;
+    }
+
+    .case-table tr:last-child td { border-bottom: none; }
+
+    .case-table td:first-child {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .case-table tr.vaf-row td {
+      background: var(--coral-dim);
+    }
+
+    .case-table tr.vaf-row td:first-child {
+      color: var(--coral);
+    }
+
+    .case-table tr.zero-row td {
+      opacity: 0.45;
+    }
+
+    /* ── COMPARISON ROW ────────────────────────────────────── */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.25rem 0;
+    }
+
+    .compare-cell {
+      background: var(--bg1);
+      padding: 1.25rem;
+    }
+
+    .compare-cell.rfk { border-top: 3px solid var(--coral); }
+    .compare-cell.kerry { border-top: 3px solid var(--accent); }
+
+    .compare-name {
+      font-size: 0.72rem;
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .compare-cell.rfk .compare-name { color: var(--coral); }
+    .compare-cell.kerry .compare-name { color: var(--accent); }
+
+    .compare-cell ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .compare-cell ul li {
+      font-size: 0.8rem;
+      color: var(--text1);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .compare-cell.rfk ul li::before { content: '▸'; color: var(--coral); font-size: 0.65rem; margin-top: 0.15rem; }
+    .compare-cell.kerry ul li::before { content: '▸'; color: var(--accent); font-size: 0.65rem; margin-top: 0.15rem; }
+
+    /* ── INFERENCE PANEL ───────────────────────────────────── */
+    .inference {
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-brd);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .inference .inf-head {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .inference p { font-size: 0.875rem; }
+
+    /* ── DEBATE THREAD ─────────────────────────────────────── */
+    .debate { margin: 1.5rem 0; }
+
+    .debate-turn {
+      display: flex;
+      gap: 0.875rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .turn-tag {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      white-space: nowrap;
+    }
+
+    .turn-tag.ai { background: var(--text2); }
+    .turn-tag.you { background: var(--accent); }
+    .turn-tag.axiom { background: var(--coral); }
+
+    .turn-body {
+      flex: 1;
+    }
+
+    .turn-body p {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── HOMOLOGY TABLE ────────────────────────────────────── */
+    .homology {
+      background: var(--bg1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 1.25rem 0;
+    }
+
+    .homology-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border-md);
+    }
+
+    .homology-head span, .homology-row div {
+      padding: 0.6rem 0.875rem;
+      font-size: 0.75rem;
+    }
+
+    .homology-head span {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text2);
+      font-weight: 400;
+    }
+
+    .homology-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .homology-row:last-child { border-bottom: none; }
+
+    .homology-row:hover { background: var(--bg2); }
+
+    .homology-row div { color: var(--text1); }
+
+    .homology-row div:first-child {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--coral);
+    }
+
+    /* ── FINAL VERDICT ─────────────────────────────────────── */
+    .verdict {
+      background: var(--bg2);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin: 2rem 0;
+      border: 1px solid var(--border);
+    }
+
+    .verdict-omega {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .verdict p { font-size: 0.875rem; }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    footer .outer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-text {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      color: var(--text2);
+    }
+
+    .footer-eq {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text2);
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 560px) {
+      .matrix { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .display { font-size: 1.8rem; }
+      .homology-head, .homology-row { grid-template-columns: 1fr 1fr; }
+      .homology-head span:nth-child(3),
+      .homology-row div:nth-child(3) { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-wrap img { animation: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── HEADER ── -->
+  <div class="site-header">
+    <div class="header-inner">
+      <div class="logo-wrap" aria-hidden="true">
+        <img class="logo-dark"  src="https://abikesa.github.io/logos/assets/ukubona-dark.png"  alt="" />
+        <img class="logo-light" src="https://abikesa.github.io/logos/assets/ukubona-light.png" alt="" />
+      </div>
+      <div class="header-meta">
+        <h1>β₄VₐF — Dynamic Gain Failure</h1>
+        <p>Ukubona LLC · Clinical axiom case study</p>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle light and dark mode">
+        <span id="theme-label">light</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <div class="nav-strip">
+    <div class="nav-inner" id="tab-nav">
+      <button class="tab-btn active" data-tab="axiom">Axiom</button>
+      <button class="tab-btn" data-tab="rfk">RFK Jr.</button>
+      <button class="tab-btn" data-tab="debate">Interrogation</button>
+      <button class="tab-btn" data-tab="vaf">VₐF criterion</button>
+      <button class="tab-btn" data-tab="kerry">Kerry → beyond</button>
+      <button class="tab-btn" data-tab="verdict">Verdict</button>
+    </div>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <main>
+    <div class="outer">
+
+      <!-- ═══════════════════════════════════════════ AXIOM ═══ -->
+      <section class="tab-panel active" id="tab-axiom">
+
+        <div class="section">
+          <p class="eyebrow">Ukubona LLC · Clinical digital twin</p>
+          <h2 class="display">The axiom,<br>written in blood</h2>
+          <p class="lede">The equation was not derived from first principles. It was forced by a clinical event: fatal dysfunction in the complete absence of structural pathology. Structure was zero. Function was not. Death was still possible.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The equation</h2>
+          <div class="eq">
+            log(x)<sub>nonself</sub> = [β₀ + β₁S]<sub>input</sub>
+            + [β₂Vᵢ]<sub>throughput</sub>
+            + [β₃V<sub>aS</sub> + β₄V<sub>aF</sub>]<sub>output</sub>
+            + Ω<sub>self</sub>
+          </div>
+
+          <p>Where Ω is not the residual after the β's are estimated. Ω is what the β's <em>become</em> when they couple.</p>
+
+          <div class="eq">
+            Ω<sub>t</sub> = Σ<sub>i&lt;j</sub> θ<sub>ij</sub>·X<sub>i</sub>·X<sub>j</sub>
+            + Σ<sub>i&lt;j&lt;k</sub> θ<sub>ijk</sub>·X<sub>i</sub>·X<sub>j</sub>·X<sub>k</sub> + ···
+            &nbsp;&nbsp; X<sub>i</sub> ∈ {S, Vᵢ, V<sub>aS</sub>, V<sub>aF</sub>}
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Four compartments</h2>
+          <div class="matrix">
+            <div class="cell">
+              <div class="cell-label">Skeletal · Voluntary</div>
+              <div class="cell-beta">β₁S</div>
+              <div class="cell-name">Surface</div>
+              <div class="cell-desc">Skeletal muscle under corticospinal governance. Skin, connective tissue, peripheral nerves. Primary interface with the world.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-label">Visceral · Involuntary</div>
+              <div class="cell-beta">β₂Vᵢ</div>
+              <div class="cell-name">Viscera</div>
+              <div class="cell-desc">Gut, liver, kidneys, lungs. Homeostatic substrate — the systems that keep you alive independently of intention.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-label">Vascular · Structural</div>
+              <div class="cell-beta">β₃VₐS</div>
+              <div class="cell-name">Fixed lesion</div>
+              <div class="cell-desc">Atheroma, remodelling, fibrosis. Changes that accumulate and persist. The archaeological record of prior insults.</div>
+            </div>
+            <div class="cell accent-vaf">
+              <div class="cell-label">Vascular · Functional</div>
+              <div class="cell-beta">β₄VₐF</div>
+              <div class="cell-name">Dynamic gain failure</div>
+              <div class="cell-desc">Intact effector. No structural lesion. Episodic misdeployment. State-dependent spasm. Prinzmetal is the founding case — not the boundary.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The founding insight</h2>
+          <blockquote>
+            Two patients with identical first-order values can diverge dramatically. The unexplained remainder is not noise. It is interaction.
+          </blockquote>
+          <p>VₐF names the pathological class where <strong>structure is silent and function kills</strong>. Prinzmetal was its first member. Spasmodic dysphonia, we will argue, is its second.</p>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════════════ RFK ═══ -->
+      <section class="tab-panel" id="tab-rfk">
+
+        <div class="section">
+          <p class="eyebrow">Case study · Step 1</p>
+          <h2 class="display">Localize first.<br>Then interrogate.</h2>
+          <p class="lede">Robert F. Kennedy Jr. has adductor spasmodic dysphonia — a focal laryngeal dystonia. The methodology demands we commit to the compartments before invoking Ω.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The diagnosis</h2>
+          <p>Adductor spasmodic dysphonia produces a strained, strangled voice with abrupt phonatory breaks during speech — but not during laughing, whispering, or coughing. The muscles are histologically normal. The nerve is normal. There is no denervation, no myopathy, no structural lesion.</p>
+          <p>This is the phenomenological signature that matters: <strong>normal anatomy, abnormal deployment, task-specific spasm, stress-sensitive, reversible</strong>.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Axiom localization — RFK Jr.</h2>
+          <table class="case-table">
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Compartment</th>
+                <th>Speech contribution</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>β₀</td>
+                <td>Baseline</td>
+                <td>Familial motor architecture, accumulated SGD history, inherited susceptibility</td>
+                <td>Non-zero</td>
+              </tr>
+              <tr>
+                <td>β₁S</td>
+                <td>Skeletal</td>
+                <td>Thyroarytenoid, lateral cricoarytenoid, interarytenoid, tongue, jaw, diaphragm, intercostals — <em>the intended phonation</em></td>
+                <td>Non-zero · dominant</td>
+              </tr>
+              <tr>
+                <td>β₂Vᵢ</td>
+                <td>Visceral</td>
+                <td>Respiratory CPGs, nucleus ambiguus, vagal tone, airway substrate that speech rides on</td>
+                <td>Non-zero</td>
+              </tr>
+              <tr class="zero-row">
+                <td>β₃VₐS</td>
+                <td>Structural</td>
+                <td>Age-related perfusion changes — probably negligible</td>
+                <td>≈ 0</td>
+              </tr>
+              <tr class="vaf-row">
+                <td>β₄VₐF</td>
+                <td>Functional</td>
+                <td><strong>The dystonic spasm itself</strong> — intact effector, episodic gain failure, inappropriate adductor burst during phonation</td>
+                <td>Non-zero · contested</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The key muscles — β₁S</h2>
+          <p>For adductor SD, the literature points overwhelmingly to the intrinsic laryngeal adductors:</p>
+          <div class="eq">
+            Overactive: thyroarytenoid · lateral cricoarytenoid · interarytenoid<br>
+            Secondary: cricothyroid · suprahyoid · infrahyoid ("strap") muscles<br>
+            Substrate: diaphragm · intercostals · tongue musculature
+          </div>
+          <p>These are unambiguously skeletal muscle. They are anatomically β₁S. But the spasms are not voluntary — which is precisely where the axiom's partition reveals its depth.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The methodological rule</h2>
+          <div class="inference">
+            <div class="inf-head">Parsimony protocol</div>
+            <p>Do not invoke Ω until every first-order β term is exhausted. Speech already decomposes naturally into S, Vᵢ, VₐS, VₐF. The task is not to explain Ω — it is to ask whether the phenomenon submits to the compartments, and if so, which ones carry non-zero weight.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════════════ DEBATE ═══ -->
+      <section class="tab-panel" id="tab-debate">
+
+        <div class="section">
+          <p class="eyebrow">Case study · Step 2</p>
+          <h2 class="display">The interrogation.<br>Three failed takes.</h2>
+          <p class="lede">The following is a condensed record of the exchange that forced the axiom to speak. Each take failed, but each failure was precise.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Take 1 — Google's error</h2>
+          <div class="debate">
+            <div class="debate-turn">
+              <span class="turn-tag ai">ai</span>
+              <div class="turn-body">
+                <p>Same β's, different Ω. The Kennedy siblings share a familial baseline but diverge dramatically. That's the unexplained remainder.</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p><strong>Wrong.</strong> You cannot discuss Ω without the β's contributing to it. Ω is not what the β's fail to explain — Ω is what the β's <em>become</em> when they couple. Calling it "higher Ω" without first committing to X<sub>i</sub> ∈ {S, Vᵢ, VₐS, VₐF} is an illegitimate move.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Take 2 — the invented ontology</h2>
+          <div class="debate">
+            <div class="debate-turn">
+              <span class="turn-tag ai">ai</span>
+              <div class="turn-body">
+                <p>Let's parameterize: G = genetic susceptibility, C = central motor circuitry, M = laryngeal biomechanics, A = adaptive compensation. Then Ω = θ<sub>GC</sub>(GC) + θ<sub>GM</sub>(GM) + ...</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p><strong>Wrong again.</strong> You've constructed an entirely different model. My axiom was built around S, Vᵢ, VₐS, VₐF. Until you show the Kennedy phenomenon submits to <em>those</em> compartments, you have no right to swap in G, C, M, A and continue as if nothing changed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Take 3 — the muscle problem</h2>
+          <div class="debate">
+            <div class="debate-turn">
+              <span class="turn-tag ai">ai</span>
+              <div class="turn-body">
+                <p>Spasmodic dysphonia is principally a disorder of central motor planning, basal ganglia circuits, laryngeal muscle control — none of these are obviously S, Vᵢ, VₐS, VₐF.</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p>Motor <em>is</em> muscle. My axiom is built around skeletal, visceral, and vascular. Now tell me which muscles are involved — then we'll locate them.</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag ai">ai</span>
+              <div class="turn-body">
+                <p>The intrinsic laryngeal muscles: thyroarytenoid, lateral cricoarytenoid, interarytenoid. These are skeletal — therefore β₁S.</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p>Is it 100% voluntary? That can't be right — the spasm is involuntary. Where does the involuntary intrusion go in the axiom?</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag ai">ai</span>
+              <div class="turn-body">
+                <p>β₂Vᵢ — the involuntary/autonomic substrate.</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p><strong>Stop.</strong> If each compartment contributes to prosody and phonetics, then each β isn't zero. Map them. Don't chat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The turn — VₐF enters</h2>
+          <div class="debate">
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p>Are you sure β₄VₐF isn't involved in dysphonia? Migraines and Prinzmetal are all muscle. The axiom is all muscle. As is the Kennedy problem. But it's the autonomic bit... so should we reconsider?</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag ai">ai</span>
+              <div class="turn-body">
+                <p>The similarities are too striking to dismiss. Prinzmetal: normal coronary artery, normal smooth muscle, inappropriate constriction, task/state-dependent, reversible. SD: normal laryngeal muscle, inappropriate adduction, task/state-dependent, reversible. That is the <em>same phenomenological signature</em>.</p>
+              </div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag axiom">axiom</span>
+              <div class="turn-body">
+                <p>My axiom was written in blood from missing a functional thing that turned out fatal — and there was no structural pathology at all. So that axiom was already pushing beyond the vascular. VₐF may be a pathological category, not an anatomical one.</p>
+              </div>
+            </div>
+          </div>
+          <div class="inference">
+            <div class="inf-head">The convergence</div>
+            <p>VₐF is not "vascular smooth muscle." It is <strong>intact effector + episodic gain failure + no structural lesion + state-dependent spasm + reversible</strong>. The vascular case was the founding example. The criterion is phenomenological. Spasmodic dysphonia meets the criterion.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════════════ VAF ═══ -->
+      <section class="tab-panel" id="tab-vaf">
+
+        <div class="section">
+          <p class="eyebrow">Case study · Step 3</p>
+          <h2 class="display">VₐF is not<br>an anatomy. It is<br>a pathology.</h2>
+          <p class="lede">The axiom was written because structure was zero and death was still possible. That experience gave VₐF its definition — and the definition was never "vascular smooth muscle."</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The criterion</h2>
+          <div class="criterion-box">
+            <div class="crit-head">β₄VₐF membership criterion</div>
+            <ul class="criterion-list">
+              <li>Intact effector — normal histology, no structural lesion</li>
+              <li>Episodic misdeployment — spasm without structural cause</li>
+              <li>State/stress sensitivity — modulated by autonomic or emotional state</li>
+              <li>Task specificity — preserved in some contexts, broken in others</li>
+              <li>Reversibility — recovers between episodes</li>
+              <li>No denervation, no myopathy, no fibrosis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Members of the VₐF family</h2>
+          <div class="homology">
+            <div class="homology-head">
+              <span>Condition</span>
+              <span>Effector</span>
+              <span>Spasm type</span>
+            </div>
+            <div class="homology-row">
+              <div>Prinzmetal</div>
+              <div>Coronary smooth muscle</div>
+              <div>Vasospasm · rest</div>
+            </div>
+            <div class="homology-row">
+              <div>Migraine</div>
+              <div>Cerebral neurovascular unit</div>
+              <div>Vasospasm + cortical spread</div>
+            </div>
+            <div class="homology-row">
+              <div>Spasmodic dysphonia</div>
+              <div>Intrinsic laryngeal skeletal</div>
+              <div>Phonospasm · speech-specific</div>
+            </div>
+            <div class="homology-row">
+              <div>Blepharospasm</div>
+              <div>Orbicularis oculi</div>
+              <div>Lid spasm · light-triggered</div>
+            </div>
+            <div class="homology-row">
+              <div>Writer's cramp</div>
+              <div>Forearm skeletal</div>
+              <div>Task-specific dystonia</div>
+            </div>
+          </div>
+          <p>The invariant is not the tissue. It is the <em>pattern</em>: gain-control failure of an intact, otherwise-functional effector system.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Why the label stays</h2>
+          <p>VₐF is not renamed "functional spasm disorder" or any other abstraction. The label holds its etymology — vascular functional — as an acknowledgment of the founding case. <strong>Entropy wasn't renamed when it escaped thermodynamics into information theory.</strong> The label points to the origin; the interpretation expands.</p>
+
+          <div class="inference">
+            <div class="inf-head">The enriched interpretation — one paragraph</div>
+            <p>VₐF denotes dynamic gain-control failure of an intact effector. The vascular case is the canonical instance. The criterion is phenomenological, not anatomical: normal histology, reversible spasm, state dependence, no structural lesion. Any effector system meeting this criterion belongs in β₄.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Final RFK localization</h2>
+          <div class="eq">
+            Speech<sub>RFK</sub> = β₀ + β₁S + β₂Vᵢ + β₄V<sub>aF</sub> + ε<br><br>
+            β₁S &nbsp; → intended phonation: TA, LCA, IA, tongue, diaphragm<br>
+            β₂Vᵢ &nbsp;→ involuntary substrate: CPGs, nucleus ambiguus, vagus<br>
+            β₄V<sub>aF</sub> → <strong>the dystonic spasm itself</strong>: gain failure, intact effector<br>
+            β₃V<sub>aS</sub> ≈ 0
+          </div>
+          <blockquote>The spasm does not live in β₁ (that's the muscle being spasmed) nor in β₂ (that's the substrate it rides on). The spasm lives in β₄ — the gain-control failure that fires the intact effector at the wrong moment.</blockquote>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════════════ KERRY ═══ -->
+      <section class="tab-panel" id="tab-kerry">
+
+        <div class="section">
+          <p class="eyebrow">Case study · Step 4</p>
+          <h2 class="display">Interrogating<br>the sister.</h2>
+          <p class="lede">Kerry Kennedy — introduced briefly at 10:05 in the video — exhibits a milder but noticeably similar vocal tremor. Now that RFK Jr. is localized, we can ask a sharper question about her.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The sharper question</h2>
+          <p>The naive question is: <em>Does Kerry have higher or lower Ω?</em></p>
+          <p>The axiom-disciplined question is: <strong>Does she exhibit a smaller β₄VₐF coefficient on the same familial β₀ manifold, or is something else going on?</strong></p>
+          <p>That reframing changes everything. We are not looking for a different amount of unexplained residual. We are asking whether the gain-control parameter in VₐF was differently tuned by the same inherited baseline.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Sibling comparison</h2>
+          <div class="compare">
+            <div class="compare-cell rfk">
+              <div class="compare-name">RFK Jr.</div>
+              <ul>
+                <li>β₀: familial motor architecture</li>
+                <li>β₁S: laryngeal adductors activated</li>
+                <li>β₂Vᵢ: respiratory substrate engaged</li>
+                <li>β₄VₐF: <strong>large</strong> — full phonospasm, strangled voice, speech breaks</li>
+                <li>Feedback: trying harder recruits more spasm</li>
+              </ul>
+            </div>
+            <div class="compare-cell kerry">
+              <div class="compare-name">Kerry Kennedy</div>
+              <ul>
+                <li>β₀: same familial motor architecture</li>
+                <li>β₁S: same muscles, similar deployment</li>
+                <li>β₂Vᵢ: same respiratory substrate</li>
+                <li>β₄VₐF: <strong>smaller</strong> — tremor present but compensated, functional speech</li>
+                <li>Feedback: compensation damps oscillation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">What your ear is detecting</h2>
+          <p>The family resemblance in speech is not primarily in acoustic state. It is in the <strong>Jacobian</strong>:</p>
+          <div class="eq">
+            J = ∂Speech / ∂(S, Vᵢ, V<sub>aS</sub>, V<sub>aF</sub>)<br><br>
+            Kerry and RFK Jr. share similar sensitivities<br>
+            ∂Speech/∂V<sub>aF</sub> — even at different locations in state space
+          </div>
+          <p>They sound related not because they share a disease severity, but because they occupy nearby regions on the same interaction manifold. The family resemblance is in the <em>geometry</em>, not the state.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">What the axiom predicts</h2>
+          <div class="inference">
+            <div class="inf-head">Prediction from the axiom</div>
+            <p>If β₀ encodes the inherited motor architecture (and it does — β₀ is Self<sub>t−1</sub> = genotype + development + all prior SGD updates), then Kerry and RFK Jr. have similar β₀'s. But β₀ induces a coupling geometry. The siblings may inhabit nearby points on the same manifold while expressing very different magnitudes of β₄VₐF. The listener hears the shared manifold; the neurologist measures the divergent gain parameter.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Taking the axiom further — the FGT loop</h2>
+          <p>Over years of living with SD, both siblings have been running a continuous Federated Ground Truth loop:</p>
+          <div class="eq">
+            ε<sub>FGT</sub> = y<sub>true</sub> − y<sub>pred</sub><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= (intended speech) − (produced speech)<br><br>
+            w<sub>t+1</sub> = w<sub>t</sub> − γ |ε<sub>FGT</sub>|²
+          </div>
+          <p>Each time they speak, the error is computed. Weights update. Kerry's system appears to have evolved compensatory strategies that constrain β₄VₐF — her gradient descent landed in a flatter basin. RFK Jr.'s system may be caught in a sharper pathological minimum, where β₄VₐF amplifies with each compensation attempt.</p>
+          <blockquote>Two siblings running the same learning algorithm on the same inherited loss landscape — but their trajectories diverged at β₄VₐF. The axiom names exactly where they differ.</blockquote>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Open questions the axiom generates</h2>
+          <div class="homology">
+            <div class="homology-head">
+              <span>Question</span>
+              <span>Axiom term</span>
+              <span>Empirical handle</span>
+            </div>
+            <div class="homology-row">
+              <div>Does Botox to TA reduce β₄VₐF?</div>
+              <div>β₄VₐF coefficient</div>
+              <div>Pre/post voice acoustics</div>
+            </div>
+            <div class="homology-row">
+              <div>Is Kerry's θ<sub>ij</sub> (coupling tensor) smaller?</div>
+              <div>Ω structure</div>
+              <div>Laryngeal EMG during speech</div>
+            </div>
+            <div class="homology-row">
+              <div>Does stress shift β₂Vᵢ × β₄VₐF interaction?</div>
+              <div>Ω cross-term</div>
+              <div>Autonomic + voice under load</div>
+            </div>
+            <div class="homology-row">
+              <div>Is whispering preserved because β₄VₐF is task-gated?</div>
+              <div>State-dependence of VₐF</div>
+              <div>Task-switching paradigm</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ═══════════════════════════════════════════ VERDICT ═══ -->
+      <section class="tab-panel" id="tab-verdict">
+
+        <div class="section">
+          <p class="eyebrow">Case study · Conclusion</p>
+          <h2 class="display">The axiom held.<br>Its scope expanded.</h2>
+          <p class="lede">Nothing in the axiom was wrong. What the interrogation discovered was that VₐF was never a vascular label — it was always a phenomenological one, waiting for the right case to reveal it.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">What was kept</h2>
+          <div class="criterion-box">
+            <div class="crit-head">Unchanged</div>
+            <ul class="criterion-list">
+              <li>The label VₐF — it holds its etymology as acknowledgment of the founding case</li>
+              <li>The formula — the four compartments, β₀, Ω</li>
+              <li>The parsimony protocol — exhaust first-order terms before invoking Ω</li>
+              <li>The ontology — muscle type × control regime, not anatomy</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">What was sharpened</h2>
+          <div class="inference">
+            <div class="inf-head">Enriched interpretation of β₄VₐF</div>
+            <p>VₐF denotes dynamic gain-control failure of an intact effector. The vascular case is the canonical instance. The criterion is phenomenological, not anatomical: normal histology, reversible spasm, state dependence, no structural lesion. Any effector system meeting this criterion belongs in β₄.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">The methodological lesson</h2>
+          <p>Three moves that the interrogation exposed as illegitimate:</p>
+          <div class="debate">
+            <div class="debate-turn">
+              <span class="turn-tag ai">error 1</span>
+              <div class="turn-body"><p>Invoking Ω without committing to X<sub>i</sub> first. Ω is not a shortcut around compartmentalization.</p></div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag ai">error 2</span>
+              <div class="turn-body"><p>Replacing the axiom's ontology with a new one (G, C, M, A) without acknowledging the substitution.</p></div>
+            </div>
+            <div class="debate-turn">
+              <span class="turn-tag ai">error 3</span>
+              <div class="turn-body"><p>Treating VₐF as anatomical rather than phenomenological — missing the founding clinical experience that generated the category.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="verdict">
+          <div class="verdict-omega">Ω</div>
+          <p style="margin-bottom:1rem;font-size:1rem;color:var(--text0)"><em>Okubala si kulaba</em> — to count the steps is not to see the mountain.</p>
+          <p>The NDJSON ledger counts every event perfectly. Ω tells you what the accumulated events have become. Kerry and RFK Jr. share β₀ — the same mountain. Their Ω's differ because their coupling geometries, their θ<sub>ij</sub>'s, their gain parameters at β₄VₐF, diverged under decades of gradient descent on the same inherited loss landscape.</p>
+          <p style="margin-top:1rem;">The axiom did not fail to capture this. It was <em>waiting</em> for the case study to reveal its scope.</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-head">Final equation for the sibling pair</h2>
+          <div class="eq">
+            β₀<sup>RFK</sup> ≈ β₀<sup>Kerry</sup> &nbsp;(shared familial motor manifold)<br><br>
+            β₄V<sub>aF</sub><sup>RFK</sup> ≫ β₄V<sub>aF</sub><sup>Kerry</sup> &nbsp;(divergent gain parameter)<br><br>
+            Ω<sup>RFK</sup> ≠ Ω<sup>Kerry</sup> &nbsp;because&nbsp; θ<sub>ij</sub> = f(β₀) allows multiple realizations<br><br>
+            The listener hears ∂Speech/∂V<sub>aF</sub> — the Jacobian — not the state.
+          </div>
+        </div>
+
+      </section>
+
+    </div><!-- /.outer -->
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="outer">
+      <div class="footer-text">Ukubona LLC · State<sub>t</sub> = Σ Event<sub>i</sub></div>
+      <div class="footer-eq">β₄VₐF: written in blood, expanded by the case</div>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ── -->
+  <script>
+    // ── Theme toggle ──────────────────────────────────────────
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('theme-label').textContent = isDark ? 'dark' : 'light';
+    }
+
+    // Init theme label from system preference or stored
+    (function() {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // page defaults to dark; match label
+      document.getElementById('theme-label').textContent = 'light';
+    })();
+
+    // ── Tab switching ──────────────────────────────────────────
+    const tabs   = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    function activateTab(id) {
+      tabs.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === id);
+      });
+      panels.forEach(p => {
+        p.classList.toggle('active', p.id === 'tab-' + id);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+    });
+  </script>
+
+</body>
+</html>
