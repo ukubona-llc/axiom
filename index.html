@@ -796,19 +796,27 @@
               <div class="cell-label">Vascular · Structural</div>
               <div class="cell-beta">β₃VₐS</div>
               <div class="cell-name">Fixed lesion</div>
-              <div class="cell-desc">Atheroma, remodelling, fibrosis. Changes that accumulate and persist. The archaeological record of prior insults.</div>
+              <div class="cell-desc">Atheroma, remodelling, fibrosis. Changes that accumulate and persist. The archaeological record of prior insults.<sup id="fnref-linear" style="font-size:0.65em;vertical-align:super;">¹</sup></div>
             </div>
             <div class="cell accent-vaf">
               <div class="cell-label">Vascular · Functional</div>
               <div class="cell-beta">β₄VₐF</div>
-              <div class="cell-name">Dynamic gain failure</div>
-              <div class="cell-desc">Intact effector. No structural lesion. Episodic misdeployment. State-dependent spasm. Prinzmetal is the founding case — not the boundary.</div>
+              <div class="cell-name">Transient high-order gain instability</div>
+              <div class="cell-desc">Of an intact effector. No structural lesion. Abrupt onset. Difficult to sustain. State-dependent spasm. Prinzmetal is the founding case — not the boundary. The third derivative (jerk) is not decorative; it is the gatekeeper.<sup id="fnref-nonlinear" style="font-size:0.65em;vertical-align:super;">¹</sup></div>
             </div>
           </div>
-        </div>
 
-        <div class="section">
-          <h2 class="section-head">The founding insight</h2>
+          <!-- Linear vs Non-linear Footnote with expander -->
+          <div id="magnitude-note" style="margin-top:1.5rem; font-size:0.8rem; color:var(--text2); border-left:3px solid var(--border-md); padding-left:1rem;">
+            <sup>¹</sup> <strong>Note on magnitudes.</strong> β₃VₐS (∫₀ᵗ VₐS dt) and β₄VₐF (d³VₐF/dt³) have magnitudes with qualitatively different character. The cumulative (linear) component of β₃ is often detectable by imaging/labs/history. By contrast, the higher-order (non-linear) component of β₄ emerges from “nowhere.” 
+            
+            <span onclick="toggleSnap()" id="snap-toggle" style="cursor:pointer; color:var(--accent); margin-left:0.4rem; user-select:none;">[+]</span>
+            
+            <div id="snap-detail" style="display:none; margin-top:0.75rem; padding-left:1rem; border-left:2px solid var(--border); font-size:0.78rem;">
+              the jerk is jurisdictional. it constrains membership via temporal morphology: abrupt appearance, poor predictability from first-order states, intense but self-limited, reversible, minimal archaeological trace. sustained high-amplitude jerk is physiologically unsustainable.<br><br>
+              <strong>d⁴VₐF/dt⁴ (snap)</strong> describes meta-instability — when the jerk itself becomes unstable.
+            </div>
+          </div>
           <blockquote>
             Two patients with identical first-order values can diverge dramatically. The unexplained remainder is not noise. It is interaction.
           </blockquote>
@@ -887,6 +895,29 @@
                 <td><strong>The dystonic spasm itself</strong> — intact effector, episodic gain failure, inappropriate adductor burst during phonation</td>
                 <td>Non-zero · contested</td>
               </tr>
+            </tbody>
+          </table>
+        </div>
+
+                <div class="section">
+          <h2 class="section-head">Stress-testing β₄ with mental conditions</h2>
+          <div class="inference">
+            <div class="inf-head">Temporal signatures matter</div>
+            <p>The axiom classifies <em>temporal morphology</em> as much as anatomy. β₄ is transient high-order instability, not persistent landscape deformation.</p>
+          </div>
+          <table class="case-table" style="margin-top:1rem;">
+            <thead>
+              <tr>
+                <th>Phenomenon</th>
+                <th>Interpretation under axiom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="vaf-row"><td>Panic attack</td><td>Strong β₄ candidate (abrupt, self-limited)</td></tr>
+              <tr><td>Mania (acute)</td><td>Ambiguous — duration strains jerk intuition</td></tr>
+              <tr><td>Major depression</td><td>✗ — basin shift</td></tr>
+              <tr><td>PTSD flashback</td><td>Interesting candidate</td></tr>
+              <tr><td>Allodynia</td><td>✗ — reset operating point</td></tr>
             </tbody>
           </table>
         </div>
@@ -1088,15 +1119,66 @@
             </div>
           </div>
           <p>The invariant is not the tissue. It is the <em>pattern</em>: gain-control failure of an intact, otherwise-functional effector system.</p>
+                   <p>The invariant is not the tissue. It is the <em>pattern</em>: gain-control failure of an intact, otherwise-functional effector system.</p>
+
+          <h2 class="section-head">Derivative regularization · The gatekeeper</h2>
+          <table class="case-table">
+            <thead>
+              <tr>
+                <th>Phenomenon</th>
+                <th>Temporal intuition</th>
+                <th>β₄VₐF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="vaf-row">
+                <td>Prinzmetal angina</td>
+                <td>Sudden • short-lived • reversible</td>
+                <td>✓</td>
+              </tr>
+              <tr class="vaf-row">
+                <td>Migraine</td>
+                <td>Abrupt attacks • episodic remission</td>
+                <td>✓</td>
+              </tr>
+              <tr class="vaf-row">
+                <td>Spasmodic dysphonia</td>
+                <td>Task-gated phonatory bursts</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Allodynia</td>
+                <td>Persistent gain reset</td>
+                <td>✗</td>
+              </tr>
+              <tr>
+                <td>Major depression</td>
+                <td>Landscape deformation (weeks–months)</td>
+                <td>✗</td>
+              </tr>
+              <tr>
+                <td>Peripheral neuropathy</td>
+                <td>Effector/wiring lesion</td>
+                <td>✗</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.8rem;color:var(--text2);margin-top:0.5rem;">The third derivative enforces a characteristic morphology. Not every episodic or functional phenomenon qualifies.</p>       
         </div>
 
         <div class="section">
           <h2 class="section-head">Why the label stays</h2>
           <p>VₐF is not renamed "functional spasm disorder" or any other abstraction. The label holds its etymology — vascular functional — as an acknowledgment of the founding case. <strong>Entropy wasn't renamed when it escaped thermodynamics into information theory.</strong> The label points to the origin; the interpretation expands.</p>
 
+          <blockquote style="border-left:3px solid var(--coral); color:var(--coral); font-style:normal; font-size:1rem;">
+            The jerk is not explanatory.<br>
+            The jerk is jurisdictional.<br>
+            It decides what may enter β₄.
+          </blockquote>
+
           <div class="inference">
             <div class="inf-head">The enriched interpretation — one paragraph</div>
-            <p>VₐF denotes dynamic gain-control failure of an intact effector. The vascular case is the canonical instance. The criterion is phenomenological, not anatomical: normal histology, reversible spasm, state dependence, no structural lesion. Any effector system meeting this criterion belongs in β₄.</p>
+            <p>VₐF denotes dynamic gain-control failure of an intact effector. The vascular case is the canonical instance. The criterion is phenomenological, not anatomical: normal histology, reversible spasm, state dependence, no structural lesion. Any effector system meeting this criterion belongs in β₄.<sup style="font-size:0.65em;vertical-align:super;">¹</sup></p>
           </div>
         </div>
 
@@ -1250,7 +1332,8 @@
               <li>The label VₐF — it holds its etymology as acknowledgment of the founding case</li>
               <li>The formula — the four compartments, β₀, Ω</li>
               <li>The parsimony protocol — exhaust first-order terms before invoking Ω</li>
-              <li>The ontology — muscle type × control regime, not anatomy</li>
+              <li>The ontology — effector stack × control regime (temporal signatures), not anatomy</li>
+              <li>Peripheral neuropathy belongs to β₁S — lesion in the effector stack itself, not transient gain instability of an intact effector.</li>
             </ul>
           </div>
         </div>
@@ -1259,7 +1342,7 @@
           <h2 class="section-head">What was sharpened</h2>
           <div class="inference">
             <div class="inf-head">Enriched interpretation of β₄VₐF</div>
-            <p>VₐF denotes dynamic gain-control failure of an intact effector. The vascular case is the canonical instance. The criterion is phenomenological, not anatomical: normal histology, reversible spasm, state dependence, no structural lesion. Any effector system meeting this criterion belongs in β₄.</p>
+            <p>VₐF denotes dynamic gain-control failure of an intact effector. The vascular case is the canonical instance. The criterion is phenomenological, not anatomical: normal histology, reversible spasm, state dependence, no structural lesion. Any effector system meeting this criterion belongs in β₄.<sup style="font-size:0.65em;vertical-align:super;">¹</sup></p>
           </div>
         </div>
 
@@ -1346,6 +1429,18 @@
     tabs.forEach(btn => {
       btn.addEventListener('click', () => activateTab(btn.dataset.tab));
     });
+      // ── Magnitude note expander ───────────────────────────────
+    function toggleSnap() {
+      const detail = document.getElementById('snap-detail');
+      const toggle = document.getElementById('snap-toggle');
+      if (detail.style.display === 'none') {
+        detail.style.display = 'block';
+        toggle.textContent = '[−]';
+      } else {
+        detail.style.display = 'none';
+        toggle.textContent = '[+]';
+      }
+    }
   </script>
 
 </body>
